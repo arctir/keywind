@@ -13,16 +13,12 @@ services:
 
   keycloak:
     image: docker.io/bitnami/keycloak
-    #environment:
-    #  - KEYCLOAK_ADMIN=test
-    #  - KEYCLOAK_ADMIN_PASSWORD=test
     depends_on:
       - postgresql
     ports:
       - "8000:8080"
     volumes:
       - ./theme:/opt/bitnami/keycloak/themes:ro
-      #- db-data:/opt/bitnami/keycloak/data
 
 volumes:
   postgresql_data:
