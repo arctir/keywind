@@ -9,6 +9,7 @@
 <#import "components/atoms/nav.ftl" as nav>
 <#import "components/molecules/locale-provider.ftl" as localeProvider>
 <#import "components/molecules/username.ftl" as username>
+<#import "/assets/icons/chevron-down.ftl" as icon>
 
 <#macro
   registrationLayout
@@ -19,8 +20,9 @@
   showAnotherWayIfPresent=true
 >
   <#assign cardHeader>
+
     <@logo.kw>
-      ${kcSanitize(msg("loginTitleHtml", (realm.displayNameHtml!"")))?no_esc}
+        <img class="mx-auto" src="${url.resourcesPath}/dist/arctir-horz-logo-color-rgb.png" />
     </@logo.kw>
     <#if !(auth?has_content && auth.showUsername() && !auth.showResetCredentials())>
       <@heading.kw>

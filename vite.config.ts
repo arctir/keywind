@@ -1,7 +1,11 @@
+import { fileURLToPath } from 'url';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
+  root: "src",
+  publicDir: "public",
   build: {
+    copyPublicDir: true,
     rollupOptions: {
       input: [
         'src/index.ts',

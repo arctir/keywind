@@ -10,10 +10,16 @@ module.exports = {
   },
   plugins: [require('@tailwindcss/forms')],
   theme: {
+    colors: {
+      ...colors,
+      ...{
+        blue: "#030020",
+      }
+    },
     extend: {
       colors: {
         primary: colors.blue,
-        secondary: colors.gray,
+        secondary: colors.blue,
 
         provider: {
           bitbucket: '#0052CC',
