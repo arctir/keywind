@@ -1,12 +1,11 @@
-FROM node:18-alpine
+FROM node:18-alpine as build
 
 WORKDIR /theme
-COPY package.json package.json
-COPY tsconfig.json tsconfig.json
-COPY tsconfig.node.json tsconfig.node.json
-COPY vite.config.ts vite.config.ts
-COPY src src
-COPY theme theme
+COPY . . 
 
 RUN npm install
 RUN npm run build
+
+FROM alpine
+
+COPY --from=build /theme/theme /theme
