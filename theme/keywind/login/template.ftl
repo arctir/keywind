@@ -22,7 +22,7 @@
   <#assign cardHeader>
 
     <@logo.kw>
-        <img class="mx-auto" src="${url.resourcesPath}/dist/arctir-horz-logo-color-rgb.png" />
+        <img class="mx-auto h-100" src='https://static.arctir.cloud/assets/logos/${kcSanitize(realm.realm!"arctir")?no_esc}' />
     </@logo.kw>
     <#if !(auth?has_content && auth.showUsername() && !auth.showResetCredentials())>
       <@heading.kw>
